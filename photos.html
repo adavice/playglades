@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photos</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.svg" />
+    <link href="src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/gallery.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/gallery.js"></script>
+  </head>
+  <body class="font-sans main-bg text-white">
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 z-40 hidden sidebar-backdrop"
+    ></div>
+
+    <div
+      id="sidebar"
+      class="fixed top-0 left-0 h-full w-80 glass-effect transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
+    >
+      <div class="p-4">
+        <div class="p-2 flex items-center justify-between mb-8">
+          <a href="index.html"
+            ><div class="flex items-center gap-2 group">
+              <div class="w-8 h-8 relative flex items-center justify-center">
+                <img src="img/logo-pink.svg" alt="Logo" class="w-10 h-10" />
+              </div>
+              <span class="text-xl font-bold gradient-text">Playglades</span>
+            </div></a
+          >
+          <a id="closeSidebar" class="text-white-500 hover:text-white-700">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <nav>
+          <div>
+            <a
+              href="index.html"
+              class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white-700 hover:text-white"
+            >
+              <span>Home</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </a>
+
+            <a
+              href="videos.html"
+              class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white-700 hover:text-white"
+            >
+              <span>Videos</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </a>
+          </div>
+          <div>
+            <div class="mb-6">
+              <a
+                href="contactus.html"
+                class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white-700 hover:text-white"
+              >
+                <span>Contact us</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </a>
+              <a
+                href="cancel.html"
+                class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white-700 hover:text-white"
+              >
+                <span>Cancel membership</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a
+                href="login.html"
+                class="text-pink-600 bg-white inline-flex items-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start gap-3 border-white/20 hover:bg-white/20"
+              >
+                Login
+              </a>
+              <a
+                href="signup.html"
+                class="mt-3 text-white inline-flex items-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full justify-start gap-3 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 hover:from-pink-600 hover:to-fuchsia-700"
+              >
+                Sign Up
+              </a>
+            </div>
+            <div
+              style="display: none"
+              class="w-full relative inline-block text-left group pt-5"
+            >
+              <a
+                class="trigger2 cursor-pointer flex items-center justify-between px-4 py-2 border rounded text-sm font-medium text-white-700 border-indigo-200 hover:bg-gray-100"
+              >
+                <span class="ml-2 user_name">user_name</span>
+                <svg
+                  class="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown2 absolute w-full right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-150 z-10"
+              >
+                <a
+                  href="/?delcookie=1"
+                  class="cursor-pointer block px-4 py-2 text-sm text-white-700"
+                  >Log out</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <header
+      class="fixed top-0 left-0 right-0 z-30 glass-effect border-b border-white/20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <a href="index.html"
+              ><div class="flex items-center gap-2 group">
+                <div class="w-8 h-8 relative flex items-center justify-center">
+                  <img src="img/logo-pink.svg" alt="Logo" class="w-10 h-10" />
+                </div>
+                <span class="text-xl font-bold gradient-text">Playglades</span>
+              </div></a
+            >
+          </div>
+
+          <div class="navbar-nav flex items-center gap-4">
+            <a
+              href="index.html"
+              class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-2 hover:bg-white/20 transition-all duration-300"
+            >
+              <span class="hidden sm:inline">Home</span></a
+            >
+            <a
+              href="videos.html"
+              class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-2 hover:bg-white/20 transition-all duration-300"
+            >
+              <span class="hidden sm:inline">Videos</span>
+            </a>
+            <a
+              href="contactus.html"
+              class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-2 hover:bg-white/20 transition-all duration-300"
+            >
+              <span class="hidden sm:inline">Contact us</span>
+            </a>
+            <a
+              href="cancel.html"
+              class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 flex items-center gap-2 hover:bg-white/20 transition-all duration-300"
+            >
+              <span class="hidden sm:inline">Cancel membership</span>
+            </a>
+            <a
+              id="openSidebar"
+              class="inline-flex sm:hidden items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 hover:bg-white/20 transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-menu w-5 h-5"
+              >
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line></svg
+            ></a>
+            <div
+              class="menu-button hidden md:flex items-center gap-2 ml-2 pl-2 border-l border-white/20"
+            >
+              <a
+                href="login.html"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-10 px-4 py-2 hover:bg-white/20 transition-all duration-300"
+              >
+                Login</a
+              >
+              <a
+                href="signup.html"
+                class="text-white inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 hover:from-pink-600 hover:to-fuchsia-700 luxury-shadow"
+              >
+                Sign Up
+              </a>
+            </div>
+
+            <div
+              style="display: none"
+              class="relative inline-block text-left group"
+            >
+              <a
+                class="trigger1 cursor-pointer flex items-center px-4 py-2 border rounded text-sm font-medium text-white-700 border-indigo-200 hover:bg-gray-100"
+              >
+                <span class="ml-2 user_name">user_name</span>
+                <svg
+                  class="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown1 absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-150 z-10"
+              >
+                <a
+                  href="/?delcookie=1"
+                  class="cursor-pointer block px-4 py-2 text-sm text-white-700"
+                  >Log out</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-16 min-h-screen">
+      <div class="min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <section class="mb-8">
+            <div
+              class="fg-gallery grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4"
+            >
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+              <img
+                src="img/440x280.jpg"
+                class="group relative block aspect-[3/2] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              />
+            </div>
+            <div
+              class="flex justify-center mt-6 game_list"
+              aria-label="Game_list"
+            >
+              <nav class="inline-flex space-x-2 pagination">
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 hover:from-pink-600 hover:to-fuchsia-700 rounded active"
+                  >1</a
+                >
+
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white luxury-shadow neon-gradient rounded bg-pink-500"
+                  >2</a
+                >
+
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white luxury-shadow neon-gradient rounded bg-pink-500"
+                  >3</a
+                >
+
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white luxury-shadow neon-gradient rounded bg-pink-500"
+                  >4</a
+                >
+
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white luxury-shadow neon-gradient rounded bg-pink-500"
+                  >5</a
+                >
+              </nav>
+            </div>
+          </section>
+      bg-pink-500
+    </main>
+
+    <footer class="glass-effect text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center"
+              >
+                <img src="img/logo-white.svg" alt="Logo" class="w-8 h-8" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Playglades</h3>
+                <p style="display: none" class="text-sm text-white-400">
+                  Your Digital Playground
+                </p>
+              </div>
+            </div>
+            <p class="text-white-300 mb-6 max-w-md">
+              Adult video site for female beauty lovers, where new videos and
+              exclusive content await every curious subscriber.
+            </p>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-20 h-12 bg-white rounded flex items-center justify-center"
+                >
+                  <img
+                    src="img/content-rating-symbol-vector.png"
+                    alt="18+"
+                    class="w-20 h-10"
+                  />
+                </div>
+                <div
+                  class="w-20 h-10 bg-white rounded flex items-center justify-center"
+                >
+                  <img src="img/rta-1.png" alt="Rta" class="w-20 h-12" />
+                </div>
+                <div
+                  class="w-20 h-10 bg-white rounded flex items-center justify-center"
+                >
+                  <img src="img/visa.png" alt="Visa" class="w-20 h-12" />
+                </div>
+                <div
+                  class="w-20 h-10 bg-white rounded flex items-center justify-center"
+                >
+                  <img src="img/mc.png" alt="MC" class="w-20 h-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Service</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  class="text-white-300 hover:text-white transition-colors"
+                  href="about.html"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contactus.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Contact Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="cancel.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Cancel Subscription</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="terms.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="policy.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="sub_terms.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Subscription Terms</a
+                >
+              </li>
+              <li>
+                <a
+                  href="refund.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >Refund Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faq.html"
+                  class="text-white-300 hover:text-white transition-colors"
+                  >F.A.Q.</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-white-400"
+        >
+          <p>
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Playglades. All rights reserved.
+          </p>
+          <p class="mt-1">
+            <img
+              style="display: block; margin: auto; width: 320px"
+              src="data:image/png;base64,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"
+              alt=""
+            />
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+
+    <script>
+      var a = new FgGallery(".fg-gallery", {
+        cols: 3,
+        style: {
+          border: "0px solid #fff",
+          height: "240px",
+          borderRadius: "5px",
+          boxShadow: "0 2px 10px -5px #858585",
+        },
+      });
+
+      // var a = new FgGallery('.ns', {
+      //     cols: 3,
+      //     style: {
+      //         border: '0 solid #fff',
+      //         height: '240px',
+      //         borderRadius: '5px',
+      //     }
+      // })
+    </script>
+  </body>
+</html>

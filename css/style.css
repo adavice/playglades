@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --primary: #6366f1;
@@ -10,15 +10,20 @@
   --bg-glass: rgba(255, 255, 255, 0.8);
   --shadow-luxury: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --main-bg: #13121a;
+  --main-bg: #13121a;
 }
 
-.main-bg{
+.main-bg {
   background-color: var(--main-bg);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -57,10 +62,10 @@ a {
   background-clip: text;
 }
 
-.neon-gradient{
+.neon-gradient {
   border: 2px solid transparent;
-  background: 
-    linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)) padding-box,
+  background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65))
+      padding-box,
     linear-gradient(135deg, #ec4899, #9ca3af) border-box;
 
   backdrop-filter: blur(15px);
@@ -75,8 +80,8 @@ a {
 
 .mainTable td {
   padding: 5px;
-  border: 1px solid #4f46e5;
-  color: #374151;
+  border: 1px solid #ec4899;
+  color: #fff;
 }
 
 ul li.list-style {
@@ -273,7 +278,7 @@ ul li.list-style {
 }
 
 /*form*/
-input[type="checkbox"]{
+input[type="checkbox"] {
   cursor: pointer;
 }
 
@@ -292,6 +297,99 @@ input[type="checkbox"]{
   border-color: hsl(240 6% 90%);
 }
 
-.list-disc{
+.list-disc {
   list-style-type: disc;
+}
+
+@media (min-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+}
+
+.body-cover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.body-cover.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.body-cover.active img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-animation: scale 0.3s 0.3s ease forwards;
+  animation: scale 0.3s 0.3s ease forwards;
+  box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+  border-radius: 5px;
+  width: unset;
+  max-height: 100%;
+  max-width: 100%;
+  user-select: none;
+}
+@-webkit-keyframes scale {
+  to {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  to {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+option {
+  background-color: #13121a;
+}
+
+.nocredits {
+  position: relative;
+}
+
+.nocredits > div {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  min-width: 292px;
+}
+
+.videoPlayer {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 20px 16px -16px #000000bd;
+  outline: 0;
+}
+
+.nocredits .videoPlayer {
+  filter: brightness(0.3);
 }

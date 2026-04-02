@@ -62,6 +62,7 @@
     --color-pink-500: oklch(65.6% 0.241 354.308);
     --color-pink-600: oklch(59.2% 0.249 0.584);
     --color-pink-700: oklch(52.5% 0.223 3.958);
+    --color-pink-800: oklch(52.5% 0.223 6.958);
     --color-rose-400: oklch(71.2% 0.194 13.428);
     --color-rose-500: oklch(64.5% 0.246 16.439);
     --color-rose-600: oklch(58.6% 0.253 17.585);
@@ -2354,4 +2355,32 @@
       --tw-scale-z: 1;
     }
   }
+}
+
+.text-pink-400{
+  color:var(--color-pink-400);
+}
+
+.text-pink-500{
+  color:var(--color-pink-500);
+}
+
+.text-pink-600{
+  color:var(--color-pink-600);
+}
+
+.text-pink-800{
+  color:var(--color-pink-800);
+}
+
+.bg-pink-500{
+  background-color:var(--color-pink-500);
+}
+
+.h-fit{
+  height: fit-content;
+}
+
+.border-pink-500{
+  border-color: var(--color-pink-500);
 }
